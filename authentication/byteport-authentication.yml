@@ -1,0 +1,34 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.byteport.com/api-reference
+docs: https://docs.byteport.com/api-reference
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+  notes: >-
+    Every request requires two headers. Authorization carries a workspace-scoped bearer
+    API key (prefix bp_) created via POST /v1/tokens or the dashboard; a User-Agent header
+    is mandatory and requests without it are rejected with 403. There are no OAuth2 flows
+    and no granular scopes - keys inherit workspace-level access.
+schemes:
+- name: bearerApiKey
+  type: http
+  scheme: bearer
+  bearer_format: Byteport API key (bp_ prefix, 64-char hex secret)
+  header: Authorization
+  example: 'Authorization: Bearer [example key]'
+  sources: [https://docs.byteport.com/api-reference]
+- name: userAgent
+  type: apiKey
+  in: header
+  name: User-Agent
+  required: true
+  description: Mandatory on every request; missing User-Agent returns HTTP 403.
+  sources: [https://docs.byteport.com/api-reference]
+key_management:
+  create_operation: POST /v1/tokens
+  fields: [name, expires_at]
+  token_returned_once: true
+  storage: Byteport stores only a SHA-256 hash of the token; the secret cannot be recovered.
+  expiry: expires_at optional (RFC 3339); omit for non-expiring keys.
