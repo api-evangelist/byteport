@@ -1,0 +1,36 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.byteport.com/api-reference
+docs: https://docs.byteport.com/api-reference
+format: custom-json
+envelope:
+  shape: '{ "error": <int status>, "message": <string> }'
+  example: '{ "error": 400, "message": "Source location matched more than one path." }'
+  problem_json: false
+  notes: >-
+    Byteport does not use RFC 9457 application/problem+json; errors are a flat JSON object
+    with a numeric error (matching the HTTP status) and a human-readable message.
+success_codes:
+- {status: 200, meaning: Successful completion}
+- {status: 201, meaning: Resource created (e.g. API key)}
+- {status: 202, meaning: Asynchronous operation accepted (transfers queued)}
+- {status: 204, meaning: Success with no response body}
+problems:
+- status: 400
+  title: Invalid request
+  detail: Invalid request body or parameters (e.g. a source that matched more than one path).
+- status: 401
+  title: Unauthorized
+  detail: Missing or invalid API key in the Authorization header.
+- status: 403
+  title: Forbidden
+  detail: Missing User-Agent header, or the API key has insufficient permissions.
+- status: 404
+  title: Not found
+  detail: Requested resource or location does not exist.
+- status: 429
+  title: Rate limit exceeded
+  detail: Per-API-key rate limit exceeded; response includes a Retry-After header.
+- status: 5xx
+  title: Server error
+  detail: Byteport-side error; retry with backoff.

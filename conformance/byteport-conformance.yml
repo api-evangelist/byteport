@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: derived
+source: https://docs.byteport.com/api-reference
+standards:
+- id: bearer-token-auth
+  conforms: true
+  evidence: Authorization Bearer API key documented on every request.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a custom flat JSON envelope ({error, message}), not application/problem+json.
+- id: oauth2
+  conforms: false
+  evidence: No OAuth2 flows; workspace-scoped bearer API keys only.
+- id: rate-limit-signaling
+  conforms: true
+  evidence: 429 responses include a Retry-After header.
+- id: rfc3339-timestamps
+  conforms: true
+  evidence: API-key expires_at uses RFC 3339 timestamps.
+- id: pagination
+  conforms: false
+  evidence: List operation returns all entries in a single response with no cursor/limit.
+compliance_program:
+  published: false
+  notes: >-
+    AES-256 encryption in transit and a 99.99% SLA are advertised on the pricing page, and
+    Enterprise mentions "advanced compliance packages", but no named certification (SOC 2,
+    ISO 27001, PCI, HIPAA, FedRAMP) is published, so no Compliance pointer is emitted.

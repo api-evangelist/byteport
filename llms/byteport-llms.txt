@@ -1,0 +1,34 @@
+# Byteport
+
+> Byteport is a San Francisco-based file transfer acceleration company (Y Combinator W2026) built around DART (Dynamic Accelerated Record Transfer), a proprietary protocol the company reports as typically 10x faster than TCP and up to 1000-1500x faster over unreliable cellular or satellite links. The Byteport API copies, moves, pulls, shares, and lists files across connected storage providers (Amazon S3, Google Drive, Dropbox, Box and more) at scales from 1GB to 100TB with zero network configuration.
+
+Base URL: https://api.byteport.com
+Authentication: Authorization: Bearer bp_xxxxxxxxx (workspace-scoped API key) + a mandatory User-Agent header.
+
+## API
+
+- [API Reference](https://docs.byteport.com/api-reference): REST endpoints, auth, status codes, rate limits
+- [Transfers - Copy](https://docs.byteport.com/api-reference/transfers/copy): POST /copy — {from, to} -> {id, status}
+- [Transfers - Move](https://docs.byteport.com/api-reference/transfers/move): POST /move — {from, to} -> {id, status}
+- [Transfers - Pull](https://docs.byteport.com/api-reference/transfers/pull): POST /pull — {from (URLs), to} -> {id, status}
+- [Transfers - Share](https://docs.byteport.com/api-reference/transfers/share): POST /share — {file, password?} -> {url}
+- [Transfers - List](https://docs.byteport.com/api-reference/transfers/list): POST /v1/list — {name?, id?, path?, recurse?} -> {entries[]}
+- [API Keys - Create](https://docs.byteport.com/api-reference/api-keys/create): POST /v1/tokens — {name, expires_at?} -> {id, name, token, expires_at}
+- [Webhooks](https://docs.byteport.com/webhooks): Coming soon (placeholder)
+
+## Docs
+
+- [Documentation](https://docs.byteport.com)
+- [Dashboard](https://app.byteport.io)
+- [Pricing](https://byteport.com/pricing): Growth $500/mo (99.99% SLA, AES-256); Enterprise custom (CLI/SDK access)
+- [DART protocol](https://byteport.com/news/dart)
+- [GitHub](https://github.com/getbyteport)
+
+## Repo artifacts
+
+- [Authentication](authentication/byteport-authentication.yml)
+- [Conventions](conventions/byteport-conventions.yml)
+- [Error catalog](errors/byteport-problem-types.yml)
+- [Lifecycle](lifecycle/byteport-lifecycle.yml)
+- [Conformance](conformance/byteport-conformance.yml)
+- [MCP (candidate)](mcp/byteport-mcp.yml)

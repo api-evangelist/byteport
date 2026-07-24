@@ -1,0 +1,21 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.byteport.com/api-reference
+versioning:
+  scheme: mixed-uri-path
+  current: v1
+  docs: https://docs.byteport.com/api-reference
+  notes: >-
+    /v1-namespaced operations (POST /v1/tokens, POST /v1/list) coexist with root-level
+    transfer verbs (POST /copy, /move, /pull, /share). No date or header versioning.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No public deprecation policy or RFC 8594 Sunset/Deprecation header support found.
+sla:
+  uptime_target: '99.99%'
+  source: https://byteport.com/pricing
+  notes: 99.99% SLA advertised on the Growth plan; custom SLA on Enterprise.
+status_page: null
+status_page_notes: No public status page discovered as of 2026-07-18.
+deprecated_operations: []

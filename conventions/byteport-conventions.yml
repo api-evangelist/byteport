@@ -1,0 +1,48 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.byteport.com/api-reference
+docs: https://docs.byteport.com/api-reference
+base_url: https://api.byteport.com
+authentication:
+  style: bearer-api-key
+  header: Authorization
+  required_headers: [Authorization, User-Agent]
+  detail: authentication/byteport-authentication.yml
+idempotency:
+  supported: false
+  notes: No idempotency key header or contract is documented as of 2026-07-18.
+pagination:
+  style: none
+  notes: >-
+    POST /v1/list returns all matching entries in a single response with no cursor,
+    offset, or limit parameters documented.
+versioning:
+  style: mixed-uri-path
+  notes: >-
+    Newer operations are namespaced under /v1 (POST /v1/tokens, POST /v1/list) while the
+    core transfer verbs are served at the root (POST /copy, /move, /pull, /share). No
+    version header or date-based versioning is documented.
+request_tracing:
+  request_id_header: null
+  notes: No request-id / correlation header is documented.
+error_envelope:
+  shape: '{ "error": <int status>, "message": <string> }'
+  format: custom-json
+  problem_json: false
+  detail: errors/byteport-problem-types.yml
+rate_limit_signaling:
+  status_code: 429
+  retry_after_header: true
+  scope: per API key
+  notes: >-
+    Long-running operations (Transfers, Preview) count as a single request regardless of
+    how many files they touch. Rate-limit increases via support@byteport.io.
+  detail: lifecycle/byteport-lifecycle.yml
+transfer_model:
+  async: true
+  status_values: [queued, running, complete]
+  identifier_prefix: 'trf_'
+  notes: >-
+    Transfer operations return a transfer id (e.g. trf_01HZ...) and a status enum; large
+    moves are processed server-side without local download.
+storage_backends: [Amazon S3, Google Cloud Storage, Azure Blob, Google Drive, Dropbox, Box]

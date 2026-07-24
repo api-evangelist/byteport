@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: searched
+source: probe of /.well-known/ on Byteport hosts, 2026-07-18
+hosts:
+- host: https://api.byteport.com
+  documents:
+  - {path: /.well-known/security.txt, status: 401}
+  - {path: /.well-known/openid-configuration, status: 401}
+  - {path: /.well-known/oauth-authorization-server, status: 401}
+  - {path: /.well-known/api-catalog, status: 401}
+  notes: api.byteport.com requires an API key (Bearer + User-Agent); all paths return 401, none publicly served.
+- host: https://byteport.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://docs.byteport.com
+  documents:
+  - {path: /llms.txt, status: 404}
+  - {path: /docs/llms.txt, status: 404}
+  - {path: /openapi.json, status: 404}
+  - {path: /openapi.yaml, status: 404}
+result: none
+result_notes: >-
+  No public .well-known discovery documents, OpenAPI spec, or llms.txt were found. The API
+  host gates every path behind authentication (401). A generated llms.txt is provided at
+  llms/byteport-llms.txt.

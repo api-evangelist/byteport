@@ -1,22 +1,113 @@
 aid: byteport
 name: Byteport
-description: Byteport is a company surfaced as a portfolio company of y-combinator and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Byteport is a San Francisco-based file transfer acceleration company (Y Combinator
+  W2026) that moves large datasets across the internet using DART (Dynamic Accelerated Record
+  Transfer), a proprietary protocol the company reports as typically 10x faster than TCP and
+  up to 1000-1500x faster over unreliable cellular or satellite links. The Byteport API lets
+  developers copy, move, pull, share, and list files across connected storage providers such
+  as Amazon S3, Google Drive, Dropbox, and Box at scales from 1GB to 100TB with zero network
+  configuration, targeting robotics, satellite, AI/ML, SaaS data-distribution, and defense
+  workloads.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://github.com/getbyteport.png
 url: https://raw.githubusercontent.com/api-evangelist/byteport/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - y-combinator
-x-tier: stub
+x-tier: profiled
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- File Transfer
+- Data Transfer
+- Acceleration
+- Cloud Storage
+- Robotics
+- Artificial Intelligence
+- Satellite
+- Infrastructure
+- Y Combinator
+apis:
+- name: Byteport API
+  description: REST API to copy, move, pull, share, and list files across connected storage
+    providers (Amazon S3, Google Drive, Dropbox, Box and more) using the DART acceleration
+    protocol. Bearer API-key auth over https://api.byteport.com.
+  humanURL: https://docs.byteport.com/api-reference
+  baseURL: https://api.byteport.com
+  tags:
+  - File Transfer
+  - Cloud Storage
+  - Acceleration
+  properties:
+  - type: APIReference
+    url: https://docs.byteport.com/api-reference
+  - type: Authentication
+    url: authentication/byteport-authentication.yml
+  - type: Conventions
+    url: conventions/byteport-conventions.yml
+  - type: ErrorCatalog
+    url: errors/byteport-problem-types.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DomainSecurity
+  url: security/byteport-domain-security.yml
+- type: DeveloperPortal
+  url: https://docs.byteport.com
+- type: Documentation
+  url: https://docs.byteport.com
+- type: APIReference
+  url: https://docs.byteport.com/api-reference
+- type: Website
+  url: https://byteport.com
+- type: Pricing
+  url: https://byteport.com/pricing
+- type: SignUp
+  url: https://app.byteport.io
+- type: Login
+  url: https://app.byteport.io
+- type: TermsOfService
+  url: https://byteport.com/legal/terms-of-service
+- type: PrivacyPolicy
+  url: https://byteport.com/legal/privacy-policy
+- type: Support
+  url: https://byteport.com/contact
+- type: GitHubOrganization
+  url: https://github.com/getbyteport
+- type: Authentication
+  url: authentication/byteport-authentication.yml
+- type: Conventions
+  url: conventions/byteport-conventions.yml
+- type: ErrorCatalog
+  url: errors/byteport-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/byteport-lifecycle.yml
+- type: Conformance
+  url: conformance/byteport-conformance.yml
+- type: MCPServer
+  url: mcp/byteport-mcp.yml
+- type: LLMsTxt
+  url: llms/byteport-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
