@@ -2,10 +2,9 @@ generated: '2026-07-18'
 method: derived
 status: candidate
 source: https://docs.byteport.com/api-reference
-notes: >-
-  No official hosted or remote Byteport MCP server was found (docs, npm @modelcontextprotocol,
-  MCP registries). The tools below are a candidate surface derived from the documented REST
-  operations, one tool per operation, for a future MCP wrapper.
+notes: No official hosted or remote Byteport MCP server was found (docs, npm @modelcontextprotocol, MCP
+  registries). The tools below are a candidate surface derived from the documented REST operations, one
+  tool per operation, for a future MCP wrapper.
 server:
   name: byteport
   transport: http
@@ -13,19 +12,25 @@ server:
 tools:
 - name: copy_files
   description: Copy files between connected storage locations (async transfer).
-  source_operation: 'POST https://api.byteport.com/copy'
+  source_operation: POST https://api.byteport.com/copy
 - name: move_files
   description: Move files between connected storage locations (async transfer).
-  source_operation: 'POST https://api.byteport.com/move'
+  source_operation: POST https://api.byteport.com/move
 - name: pull_files
   description: Pull files from external URLs into a destination location (server-side fetch).
-  source_operation: 'POST https://api.byteport.com/pull'
+  source_operation: POST https://api.byteport.com/pull
 - name: share_file
   description: Generate an instantly shareable, optionally password-protected URL for a file.
-  source_operation: 'POST https://api.byteport.com/share'
+  source_operation: POST https://api.byteport.com/share
 - name: list_objects
   description: List files/folders in a connected storage location, optionally recursive.
-  source_operation: 'POST https://api.byteport.com/v1/list'
+  source_operation: POST https://api.byteport.com/v1/list
 - name: create_api_key
   description: Create a workspace-scoped API key (bearer token) with an optional expiry.
-  source_operation: 'POST https://api.byteport.com/v1/tokens'
+  source_operation: POST https://api.byteport.com/v1/tokens
+deployment:
+  mode: none
+  verified: derived
+  tools: 6
+  checked: '2026-08-12'
+  source: catalog MCP census
