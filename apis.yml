@@ -8,6 +8,17 @@ description: Byteport is a San Francisco-based file transfer acceleration compan
   as Amazon S3, Google Drive, Dropbox, and Box at scales from 1GB to 100TB with zero network
   configuration, targeting robotics, satellite, AI/ML, SaaS data-distribution, and defense
   workloads.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
