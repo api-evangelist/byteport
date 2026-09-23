@@ -1,0 +1,25 @@
+# Front Door AI Index — byteport — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: byteport
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: byteport.com
+  final_host: byteport.com
+  ownership: own
+  owner: byteport
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 6
+  host_score: 6
+  density: 3.83
+  words: 1565
+  tiers:
+    agentic: 0
+    core: 6
+    model: 0
+  ambiguous: 0
+  top_terms:
+    AI: 6
