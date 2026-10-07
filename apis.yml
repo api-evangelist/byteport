@@ -80,6 +80,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Plans
+  url: plans/byteport-plans-pricing.yml
 - url: https://byteport.com/news
   type: Blog
 - type: DomainSecurity
