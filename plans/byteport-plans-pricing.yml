@@ -1,0 +1,44 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://byteport.com/pricing
+sources:
+- https://byteport.com/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: tiered-subscription
+delivery:
+  delivery: managed+licensed
+  method: page
+  read: '2026-10-07'
+  evidence: Air-gapped Deployment
+  managed_tier: Growth
+published: true
+note: Page shows Growth at $500/month ($425 monthly with annual, Save 15%) and Enterprise as Custom. Enterprise
+  includes air-gapped deployment and source code access available upon request, suggesting licensed self-hosting
+  alongside managed.
+plan_count: 3
+currency: USD
+plans:
+- name: Growth
+  price_text: $500
+  price: 500
+  currency: USD
+  period: month
+  included_quota: Basic DART Functionality, Standard Throughput, Basic Transfers, Standard Encryption
+    (AES-256), 99.99% SLA, Email Support; 3 team seats, 10 deployment devices, 6 cloud integrations
+- name: Growth (Annual)
+  price_text: $425
+  price: 425
+  currency: USD
+  period: month
+  included_quota: Annual billing, Save 15%
+- name: Enterprise
+  price_text: Custom
+  period: month
+  included_quota: Everything in Growth, plus Full CLI and SDK Access, Unlimited throughput scaling, Enhanced
+    Cloud Transfers, Advanced compliance packages, Custom SLA, On-site deployment assistance, Air-gapped
+    Deployment
